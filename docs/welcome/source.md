@@ -127,10 +127,64 @@ In Golang you can directly run single files: .reference[1)]
      + packageB
      | + bar.go   # File which are in the packageB functions, types, ...
      + main.go    # File which will contain the main.main function
-     + go.mod     # Go Module specification file to define project name, dependencies, ...
+     + go.mod     # Go Module specification file to define module name, dependencies, ...
      + go.sum     # Go Module checksum file
 
     ```
 2. Build it (while in the folder):
    * With `go build .`; will create executable `myProject`
    * Or run directly with `go run .`
+
+---
+
+# What is the `go.mod` file?
+
+* How it looks like?
+    ```bash
+    module github.com/blaubaer/my-great-project
+
+    require (
+        github.com/gobuffalo/packr v1.22.0
+        github.com/sirupsen/logrus v1.3.0
+    )
+    ```
+* It defines the name of the module; which is usually to path to the repository .hint[without https:// prefix and .git suffix]
+* A list of other modules in the same name pattern,
+  <br/>followed by a version number which is a corresponding tag (`v\d+\.\d+\.\d+`) in the repository.
+
+.hint[Full documentation: [Go Modules](https://github.com/golang/go/wiki/Modules)]
+
+---
+
+# How to manage `go.mod`?
+
+* To create it just call (inside the project folder) `go mod init <name>`
+  <br>example: `go mod init github.com/blaubaer/my-great-project`
+* Add new and remove abandon dependencies: This is done automatically the command `go mod tidy`
+  will look in all `*.go` files for all `import (...)` statements and will add or remove lines in
+  `go.mod` accordingly.
+  <br>On add it will take the latest version from the external repository by default.
+* Use specific version? Just change this version directly inside `go.mod`
+* See dependency graph? Call `go mod graph`
+
+.hint[More stuff: Call `go help mod` and visit [Go Modules](https://github.com/golang/go/wiki/Modules)]
+
+---
+
+# What is the `go.sum` file?
+
+* Contains checksums for every required external module
+* It ensure no unexpected change of the external decencies
+* Automatically maintained by Golang
+
+.hint[Full documentation: [Go Modules](https://github.com/golang/go/wiki/Modules)]
+
+---
+
+class: center, middle
+
+# Lesson done!
+
+## [Questions?](mailto:contact@echocat.org)
+
+Moving on to Lesson: [Basics](https://golang.training.noczin.ski/basics/)
