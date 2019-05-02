@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+        @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+        body {
+            font-family: 'Droid Serif', serif;
+        }
+
+        h1, h2, h3, .headline {
+            font-family: 'Yanone Kaffeesatz', serif;
+            font-weight: normal;
+            margin: 25px 0;
+        }
+        .headline {
+            font-size: 30px;
+            opacity: 0.25;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0 0 0 20px;
+        }
+
+        li,
+        p {
+            margin: 25px 0;
+        }
+
+        .remark-slide-content {
+            font-size: 25px;
+        }
+
+        .remark-code, .remark-inline-code {
+            font-family: 'Ubuntu Mono', serif;
+        }
+
+        .remark-inline-code {
+            background-color: rgba(27,31,35,.05);
+            border-radius: 3px;
+            font-size: 85%;
+            margin: 0;
+            padding: .2em .4em;
+        }
+
+        .hint {
+            opacity: 0.25;
+        }
+        .footnote {
+            font-size: 17px;
+            font-style: italic;
+            text-decoration: none;
+            display: block;
+        }
+        .reference {
+            vertical-align: super;
+            font-size: 17px;
+            font-style: italic;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>
+        remark.create({
+            sourceUrl: 'source.md',
+            ratio: '16:9',
+            navigation: {
+                click: false,
+            },
+            highlightStyle: 'github',
+        });
+    </script>
+</body>
+</html>
