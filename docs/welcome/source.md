@@ -22,7 +22,7 @@ layout: true
   * Similar to _C_, _C++_ and _Rust_
   * But in contrast to _PHP_ and _JavaScript_ which is interpreted at runtime
   * And in contrast to _Java_ and _C#_ which is translated to VM code and at runtime interpreted.
-* The built result will shipped always shipped as executable .reference[1)]
+* The built result will always be shipped as an executable .reference[1)]
 * It is really cross platform, because the dependencies are platform independent, too. .reference[1)]
 
 .footnote[1) Some rare exceptions exists]
@@ -41,12 +41,12 @@ That's it!
 
 # Why is not more required at build time? .reference[1)]
 
-* Golang is always build from sources; this includes:
+* Golang is always built from sources; this includes:
   * Everything in the SDK itself
   * and every included library .reference[2)]
 * All dependencies are hosted via Git, SVN, Bazaar repositions
 * Golang will download all required dependencies at build time automatically .hint[(if required)]
-* Golang can compile and link itself without need of platform tools of Linux, macOS or Windows
+* Golang can compile and link itself without the need of platform tools of Linux, macOS or Windows
 
 .footnote[1) If [Go Modules](https://github.com/golang/go/wiki/Modules) is enabled which are available from Go 1.11 on - this is highly recommended]
 .footnote[2) Exceptions are possible if in extreme rare situations are static libraries are used]
@@ -60,7 +60,7 @@ That's it!
   * On Linux just the Kernel is enough and a complete empty filesystem.
   * In Docker images you can use `FROM scratch`
 * Common exceptions are just what other files you need (like HTML, CSS, ...)
-  <br/>But you can pack also them into the binary (using tools like [`packr`](https://github.com/gobuffalo/packr))
+  <br/>But you can also pack them into the binary (using tools like [`packr`](https://github.com/gobuffalo/packr))
 
 .footnote[1) If build with `CGO_ENABLED=0`]
 
@@ -74,7 +74,7 @@ The better question is: Where it does not run natively?
 * **Architectures**: **`386`**, **`amd64`**, `amd64p32`, **`arm`**, `armbe`, `arm64`, `ppc64`, `ppc64le`, `mips`, `mipsle`, `mips64`, `mips64le`, `mips64p32`, `mips64p32le`, `ppc`, `riscv`, `riscv64`, `s390`, `s390x`, `sparc`, `sparc64`, **`wasm`**
 * You can build each target from each build system (`linux->windows`, `windows->macOS`, ...)
 
-...yes, it runs natively in the browse too. Thanks to [WebAssembly](https://webassembly.org/).
+...yes, it runs natively in the browser too. Thanks to [WebAssembly](https://webassembly.org/).
 
 ---
 
@@ -95,7 +95,7 @@ The better question is: Where it does not run natively?
 
 ---
 
-# How does a very simple project look like?
+# What does a very simple project look like?
 
 In Golang you can directly run single files: .reference[1)]
 
@@ -117,7 +117,7 @@ In Golang you can directly run single files: .reference[1)]
 
 ---
 
-# How does a usual project look like?
+# Waht does a typical project look like?
 
 1. Structure:
     ```bash
@@ -139,7 +139,7 @@ In Golang you can directly run single files: .reference[1)]
 
 # What is the `go.mod` file?
 
-* How it looks like?
+* Waht it looks like?
     ```bash
     module github.com/blaubaer/my-great-project
 
@@ -148,7 +148,7 @@ In Golang you can directly run single files: .reference[1)]
         github.com/sirupsen/logrus v1.3.0
     )
     ```
-* It defines the name of the module; which is usually to path to the repository .hint[without https:// prefix and .git suffix]
+* It defines the name of the module; which is usually the path to the repository .hint[without https:// prefix and .git suffix]
 * A list of other modules in the same name pattern,
   <br/>followed by a version number which is a corresponding tag (`v\d+\.\d+\.\d+`) in the repository.
 
@@ -174,7 +174,7 @@ In Golang you can directly run single files: .reference[1)]
 # What is the `go.sum` file?
 
 * Contains checksums for every required external module
-* It ensure no unexpected change of the external decencies
+* It ensure no unexpected change of the external dependencies
 * Automatically maintained by Golang
 
 .hint[Full documentation: [Go Modules](https://github.com/golang/go/wiki/Modules)]
