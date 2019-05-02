@@ -187,4 +187,4 @@ class: center, middle
 
 ## [Questions?](mailto:contact@echocat.org)
 
-Moving on to Lesson: [Basics](https://golang.training.noczin.ski/basics/)
+Moving on to next lesson: [Basics](https://golang.training.noczin.ski/basics/)
