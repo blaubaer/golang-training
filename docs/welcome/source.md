@@ -2,7 +2,7 @@ class: center, middle
 
 # Golang Training
 
-## Welcome to Golang!
+## Welcome!
 
 ???
 Some note.
@@ -23,12 +23,13 @@ layout: true
   * But in contrast to _PHP_ and _JavaScript_ which is interpreted at runtime
   * And in contrast to _Java_ and _C#_ which is translated to VM code and at runtime interpreted.
 * The built result will shipped always shipped as executable .reference[1)]
+* It is really cross platform, because the dependencies are platform independent, too. .reference[1)]
 
-.footnote[1) Some exceptions included]
+.footnote[1) Some rare exceptions exists]
 
 ---
 
-# What are the dependencies, at build time?
+# What are the dependencies at build time?
 
 1. A Golang SDK
    * Could be downloaded from [golang.org/dl](https://golang.org/dl/)
@@ -44,18 +45,92 @@ That's it!
   * Everything in the SDK itself
   * and every included library .reference[2)]
 * All dependencies are hosted via Git, SVN, Bazaar repositions
-* Golang will download all required dependencies at build time automatically (if required)
-* Golang can compile and like itself without need of platform tools of Linux or Windows
+* Golang will download all required dependencies at build time automatically .hint[(if required)]
+* Golang can compile and link itself without need of platform tools of Linux, macOS or Windows
 
 .footnote[1) If [Go Modules](https://github.com/golang/go/wiki/Modules) is enabled which are available from Go 1.11 on - this is highly recommended]
 .footnote[2) Exceptions are possible if in extreme rare situations are static libraries are used]
 
 ---
 
-# What are the runtime dependencies?
+# What are the dependencies at runtime time?
 
-* Everything is s
-* Usually really nothing!
-*
-* If build with `CGO_ENABLED=0`
-* And
+* Nothing - just your build binary. .reference[1)]
+  * Because everything is static linked.
+  * On Linux just the Kernel is enough and a complete empty filesystem.
+  * In Docker images you can use `FROM scratch`
+* Common exceptions are just what other files you need (like HTML, CSS, ...)
+  <br/>But you can pack also them into the binary (using tools like [`packr`](https://github.com/gobuffalo/packr))
+
+.footnote[1) If build with `CGO_ENABLED=0`]
+
+---
+
+# What are potential build targets?
+
+The better question is: Where it does not run natively?
+
+* **Operating Systems**: AIX, **Android**, **macOS**, DragonFly, FreeBSD, Hurd, Illumos, **JavaScript**, **Linux**, Google Native Client, NetBSD, OpenBSD, Plan9, Solaris, **Windows**, ZOS
+* **Architectures**: **`386`**, **`amd64`**, `amd64p32`, **`arm`**, `armbe`, `arm64`, `ppc64`, `ppc64le`, `mips`, `mipsle`, `mips64`, `mips64le`, `mips64p32`, `mips64p32le`, `ppc`, `riscv`, `riscv64`, `s390`, `s390x`, `sparc`, `sparc64`, **`wasm`**
+* You can build each target from each build system (`linux->windows`, `windows->macOS`, ...)
+
+...yes, it runs natively in the browse too. Thanks to [WebAssembly](https://webassembly.org/).
+
+---
+
+# What is a good developer machine setup to start? .reference[1)]
+
+1. **Operating system**: Linux, macOS or Windows
+2. **SDK**: Latest from [golang.org/dl](https://golang.org/dl/); ensure environment variables:
+   ```bash
+   # This is usually automatically set using the installers
+   GOROOT=/opt/go    # Where Go is installed
+   GOPATH=$HOME/go   # go path in your home directory
+   PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin
+   ```
+3. **IDE**: Either [GoLand](https://www.jetbrains.com/go) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea)
+4. **Shell**: Any build platform native works
+
+.footnote[1) My recommendation]
+
+---
+
+# How does a very simple project look like?
+
+In Golang you can directly run single files: .reference[1)]
+
+1. Create file `sample.go`:
+  ```go
+  package main
+
+  import "fmt"
+
+  func main() {
+  	fmt.println("Hello, world!")
+  }
+  ```
+2. Build it (while in the folder):
+   * With `go build sample.go`; will create executable `sample`
+   * Or run directly with `go run sample.go`
+
+.footnote[1) The project with this setup cannot have dependencies except from the SDK.]
+
+---
+
+# How does a usual project look like?
+
+1. Structure:
+    ```bash
+    myProject     # Root folder of the project
+     + packageA
+     | + foo.go   # File which are in the packageA functions, types, ...
+     + packageB
+     | + bar.go   # File which are in the packageB functions, types, ...
+     + main.go    # File which will contain the main.main function
+     + go.mod     # Go Module specification file to define project name, dependencies, ...
+     + go.sum     # Go Module checksum file
+
+    ```
+2. Build it (while in the folder):
+   * With `go build .`; will create executable `myProject`
+   * Or run directly with `go run .`
