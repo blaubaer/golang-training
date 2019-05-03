@@ -52,7 +52,7 @@ layout: true
 * Extreme static typed .hint[(at compile- and build-time)]
 * Garbage collected .hint[(but still always with a very small memory footprint)]
 * Concurrency is a language feature .hint[(not just part of the SDK)]
-* Somehow and somehow not functional and object-oriented
+* Somehow functional and object-oriented, but also somehow not.
   <br>- it is cherry-picking from many concepts and create a new one out of it.
 * [Composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance)
 * Works with passing by _value_ or _pointer_ .hint[or for Java people by _copy_ or _reference_].
@@ -100,7 +100,7 @@ That's it!
 
 # Biggest benefit about Golang's SDK and libraries
 
-* This is a contrast to Ruby and Python where many stuff is based on static libraries
+* This is a contrast to Ruby and Python where a lot of stuff is based on static libraries
   which you have to install dedicated.
 * But very similar to Java and C# where external static libraries are extreme rare.
 
