@@ -4,6 +4,8 @@ class: center, middle
 
 ## Welcome!
 
+.hint[By [Gregor Noczinski](https://github.com/blaubaer)]
+
 <img class="visual" src="assets/blueGlass.png" alt="" width="25%" style="position: fixed; bottom: -5%; right: 10%" />
 
 ???
