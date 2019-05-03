@@ -4,6 +4,8 @@ class: center, middle
 
 ## Welcome!
 
+<img class="visual" src="assets/blueGlass.png" alt="" width="25%" style="position: fixed; bottom: -5%; right: 10%" />
+
 ???
 Some note.
 
@@ -15,9 +17,14 @@ layout: true
 
 ---
 
+# Only valid with a gopher.
+
+<img src="assets/collage.png"  alt="gophers" width="100%"/>
+---
+
 # What is Golang?
 
-* It is a programming language. ;-)
+* It is a programming language, comprehensive runtime and build system.
 * It will be directly translated to target machine code.
   * Similar to _C_, _C++_ and _Rust_
   * But in contrast to _PHP_ and _JavaScript_ which is interpreted at runtime
@@ -26,6 +33,30 @@ layout: true
 * It is really cross platform, because the dependencies are platform independent, too. .reference[1)]
 
 .footnote[1) Some rare exceptions exists]
+
+---
+
+# Origins
+
+* Initially developed by Google
+* Born out of frustration about undue complexity of the languages back in 2007
+* Should address the following points at the same time:
+  1. Efficient compilation
+  2. Efficient execution
+  3. Ease of programming
+
+---
+
+# Principles
+
+* Extreme static typed .hint[(at compile- and build-time)]
+* Garbage collected .hint[(but still always with a very small memory footprint)]
+* Concurrency is a language feature .hint[(not just part of the SDK)]
+* Somehow and somehow not functional and object-oriented
+  <br>- it is cherry-picking from many concepts and create a new one out of it.
+* [Composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance)
+* Works with passing by _value_ or _pointer_ .hint[or for Java people by _copy_ or _reference_].
+* Minimalistic languages syntax but several naming conventions.
 
 ---
 
@@ -50,6 +81,40 @@ That's it!
 
 .footnote[1) If [Go Modules](https://github.com/golang/go/wiki/Modules) is enabled which are available from Go 1.11 on - this is highly recommended]
 .footnote[2) Exceptions are possible if in extreme rare situations are static libraries are used]
+
+---
+
+# Biggest benefit about Golang's SDK and libraries
+
+* Everything .reference[1)] is reimplemented in Golang standalone and cross platform.
+* SDK includes (for example):
+  * HTTP Client and Server
+  * Encryption (including TLS, RSA, ... up to the latest versions)
+  * Low level interactions with the Kernel
+  * JSON, XML, ... (un)marshaller
+* And many libraries providing huge amount of more stuff
+
+.footnote[1) Exceptions are really rare]
+
+---
+
+# Biggest benefit about Golang's SDK and libraries
+
+* This is a contrast to Ruby and Python where many stuff is based on static libraries
+  which you have to install dedicated.
+* But very similar to Java and C# where external static libraries are extreme rare.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Hint: The Golang community likes libraries with external static<br>dependencies very much. .hint[<- Sarcasm]
+
+<img class="visual" src="assets/facePalm.png" alt="" width="15%" style="position: fixed; bottom: 5%; right: 10%" />
+
 
 ---
 
@@ -182,6 +247,8 @@ In Golang you can directly run single files: .reference[1)]
 ---
 
 class: center, middle
+
+<img class="visual" src="assets/micDrop.png" alt="" width="20%" style="position: fixed; top: 30%; right: 5%" />
 
 # Lesson done!
 
