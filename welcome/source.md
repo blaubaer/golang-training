@@ -100,7 +100,7 @@ That's it!
 
 # Biggest benefit about Golang's SDK and libraries
 
-* This is a contrast to Ruby and Python where many stuff is based on static libraries
+* This is a contrast to Ruby and Python where a lot of stuff is based on static libraries
   which you have to install dedicated.
 * But very similar to Java and C# where external static libraries are extreme rare.
 
