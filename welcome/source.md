@@ -52,7 +52,7 @@ layout: true
 * Extreme static typed .hint[(at compile- and build-time)]
 * Garbage collected .hint[(but still always with a very small memory footprint)]
 * Concurrency is a language feature .hint[(not just part of the SDK)]
-* Somehow and somehow not functional and object-oriented
+* Somehow functional and object-oriented, but also somehow not.
   <br>- it is cherry-picking from many concepts and create a new one out of it.
 * [Composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance)
 * Works with passing by _value_ or _pointer_ .hint[or for Java people by _copy_ or _reference_].
