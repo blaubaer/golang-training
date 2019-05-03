@@ -252,6 +252,17 @@ class: center, middle
 
 # Lesson done!
 
-## [Questions?](mailto:contact@echocat.org)
+Questions? [Do not hesitate to contact me!](https://github.com/blaubaer)
 
 Moving on to next lesson: [Basics](https://golang.training.noczin.ski/basics/)
+
+---
+
+# Credits
+
+* Author: [Gregor Noczinski](https://github.com/blaubaer) VP of Engineering @[LEVERTON GmbH](https://github.com/levertonai)
+* Special thanks to: [Anthony Ruffino](https://github.com/AnthonyRuffino) Full Stack Engineer @[LEVERTON GmbH](https://github.com/levertonai)
+* Gophers: [Gopher Artwork by Ashley McNamara](https://github.com/ashleymcnamara/gophers)
+
+
+
